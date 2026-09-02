@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= content_for(:title) || "Midtrans Shopify" %></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="Midtrans Shopify">
+    <meta name="mobile-web-app-capable" content="yes">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= yield :head %>
+
+    <link rel="icon" href="/icon.png" type="image/png">
+    <link rel="icon" href="/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/icon.png">
+
+    <%= stylesheet_link_tag :tailwind, "data-turbo-track": "reload" %>
+    <%= javascript_include_tag "application", "data-turbo-track": "reload", type: "module" %>
+  </head>
+
+  <body class="bg-gray-50 text-gray-900 antialiased">
+    <div class="flex min-h-screen">
+      <%= render "layouts/sidebar" %>
+
+      <main class="flex-1 p-8">
+        <% if notice %>
+          <div class="mb-4 rounded border border-green-200 bg-green-50 px-4 py-3 text-sm text-green-800"><%= notice %></div>
+        <% end %>
+        <% if alert %>
+          <div class="mb-4 rounded border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-800"><%= alert %></div>
+        <% end %>
+
+        <%= yield %>
+      </main>
+    </div>
+  </body>
+</html>

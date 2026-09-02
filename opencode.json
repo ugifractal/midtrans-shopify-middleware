@@ -1,0 +1,9 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "references": {
+    "theme": {
+      "path": "../shopify-themes/fygaro-dev",
+      "description": "Fygaro dev theme: checkout contract in sections/fygaro-checkout.liquid and assets/fygaro-checkout.js, plus theme settings (config/settings_data.json)"
+    }
+  }
+}
